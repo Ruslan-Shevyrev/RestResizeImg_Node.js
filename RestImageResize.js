@@ -1,6 +1,6 @@
 const express = require("express");
 const oracledb = require('oracledb');
-const config = require('./config/config.json');
+const config = require('./config/config_.json');
 const dbConfig = require('./config/dbconfig_.js');
 const fs = require("fs");
 const app = express();
@@ -13,31 +13,27 @@ try {
     process.exit(1);
   }; 
 
-app.get("/img/get/:id", function(req, res){
+app.get("/img/get/:id/:size", function(req, res){
 	async function run() {
-			 try{
+			try{
 				connection = await oracledb.getConnection(dbConfig);
 				
 				binds = {};
 
-			options = {
-			  outFormat: oracledb.OUT_FORMAT_OBJECT,   // query result format
-			  // extendedMetaData: true,               // get extra metadata
-			  // prefetchRows:     100,                // internal buffer allocation size for tuning
-			  // fetchArraySize:   100                 // internal buffer allocation size for tuning
-			};
+				options = {
+						outFormat: oracledb.OUT_FORMAT_OBJECT,
+				};
 			
-			result = await connection.execute('SELECT FILE_NAME, BDATA FROM APEX_APP.AUDIT_STANDART_WORK_PHOTO where ID = ' + req.params.id, binds, options);
+				result = await connection.execute(config.SQL_QUERY + req.params.id, binds, options);
 			
-			const { data, info } = await sharp(result.rows[0]['BDATA'])
-			  .resize(100)
-			  .toBuffer({ resolveWithObject: true });
-			 /* .toFile('C:\output.jpg', function(err) {
-			  });*/
-			res.end(data);
-			//res.end('success');
-			 }
-			 catch (err) {
+				const { data, info } = await sharp(result.rows[0][config.BLOB_COLUMN])
+				.resize(parseInt(req.params.size))
+				.toBuffer({ resolveWithObject: true });
+
+				res.end(data);
+
+			}
+			catch (err) {
 				console.error(err);
 			  } finally {
 				if (connection) {

@@ -12,11 +12,28 @@ npm install
 ### config.json
 
 **listener_port :** port\
-**SQL_QUERY :** query from database with blob image\
+**SQL_QUERY :** query from database with blob image using primary key like indificator\
+***Example***
+```
+	SELECT blob FROM image_table WHERE ID = 
+```
 **BLOB_COLUMN :** blob image column name
 
 ### dbconfig.js
 
-**user          :** database user,
-**password      :** database password,
+**user          :** database user,\
+**password      :** database password,\
 **connectString :** database connection string
+
+## using
+
+run service
+```
+ node RestImageResize.js
+```
+use REST API to get resize image\
+<host>:<listener_port>/img/get/<image id from database>/<image size>
+
+```
+	http://localhost:3000/img/get/30/300 
+```
