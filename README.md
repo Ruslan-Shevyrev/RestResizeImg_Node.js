@@ -32,8 +32,10 @@ run service
  node RestImageResize.js
 ```
 use REST API to get resize image\
+```
 <host>:<listener_port>/img/get/<image id from database>/<image size>
-
+```
+***Example***
 ```
 	http://localhost:3000/img/get/30/300 
 ```
