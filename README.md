@@ -11,6 +11,12 @@ npm install
 
 ### config.json
 
-**listener_port:** port\
+**listener_port :** port\
 **SQL_QUERY :** query from database with blob image\
-**BLOB_COLUMN :** blob image column name\
+**BLOB_COLUMN :** blob image column name
+
+### dbconfig.js
+
+**user          :** database user,
+**password      :** database password,
+**connectString :** database connection string

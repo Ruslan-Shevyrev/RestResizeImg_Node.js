@@ -1,3 +1,5 @@
 {
-	"listener_port" : 3000
+	"listener_port" : 3000,
+	"SQL_QUERY" : "SQL_QUERY",
+	"BLOB_COLUMN" : "BLOB_COLUMN"
 }
