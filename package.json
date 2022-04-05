@@ -6,7 +6,7 @@
     "oracledb": "^5.3.0",
     "sharp": "^0.29.3"
   },
-  "description": "",
+  "description": "Rest API resize image from Oracle database",
   "main": "RestImageResize.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,10 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs.git"
   },
-  "author": "",
+  "author": "Ruslan Shevyrev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/issues"
   },
-  "homepage": "https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs#readme"
+  "homepage": "https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs#readme",
+  "devDependencies": {}
 }
