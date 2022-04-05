@@ -17,9 +17,8 @@ npm install
 
 ***Example query:***
 ```
-	SELECT blob FROM image_table WHERE ID = 
+SELECT blob FROM image_table WHERE ID = 
 ```
-
 
 ### dbconfig.js
 
@@ -31,7 +30,7 @@ npm install
 
 run service
 ```
- node RestImageResize.js
+node RestImageResize.js
 ```
 use REST API to get resize image
 ```
