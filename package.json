@@ -1,16 +1,24 @@
 {
-  "name": "expressapp",
+  "name": "restresizeimg-nodejs",
   "version": "1.0.0",
   "dependencies": {
     "express": "^4.16.4",
     "oracledb": "^5.3.0",
     "sharp": "^0.29.3"
   },
-  "main": "dbconfig.js",
+  "description": "",
+  "main": "RestImageResize.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs.git"
+  },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "bugs": {
+    "url": "https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/issues"
+  },
+  "homepage": "https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs#readme"
 }
