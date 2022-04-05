@@ -3,3 +3,4 @@
 *.bak
 node_modules
 dbconfig_.js
+package-lock.json

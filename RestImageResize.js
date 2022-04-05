@@ -1,9 +1,9 @@
 const express = require("express");
 const oracledb = require('oracledb');
-const dbConfig = require('./config/dbconfig.js');
+const config = require('./config/config.json');
+const dbConfig = require('./config/dbconfig_.js');
 const fs = require("fs");
 const app = express();
-const config = require('./config/config.json');
 const sharp = require('sharp');
 
 try {
@@ -28,11 +28,6 @@ app.get("/img/get/:id", function(req, res){
 			};
 			
 			result = await connection.execute('SELECT FILE_NAME, BDATA FROM APEX_APP.AUDIT_STANDART_WORK_PHOTO where ID = ' + req.params.id, binds, options);
-			//console.dir(result.metaData, { depth: null });
-			
-			//console.dir(result.rows[0]['BDATA']);
-			
-			//fs.writeFileSync('C:\\'+result.rows[0]['FILE_NAME'], result.rows[0]['BDATA']);
 			
 			const { data, info } = await sharp(result.rows[0]['BDATA'])
 			  .resize(100)
