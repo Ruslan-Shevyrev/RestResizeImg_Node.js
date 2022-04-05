@@ -37,5 +37,5 @@ use REST API to get resize image\
 ```
 ***Example***
 ```
-	http://localhost:3000/img/get/30/300 
+http://localhost:3000/img/get/30/300 
 ```
