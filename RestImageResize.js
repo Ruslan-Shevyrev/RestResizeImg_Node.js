@@ -1,7 +1,7 @@
 const express = require("express");
 const oracledb = require('oracledb');
-const config = require('./config/config_.json');
-const dbConfig = require('./config/dbconfig_.js');
+const config = require('./config/config.json');
+const dbConfig = require('./config/dbconfig.js');
 const fs = require("fs");
 const app = express();
 const sharp = require('sharp');
@@ -49,5 +49,5 @@ run();
 });
    
 app.listen(config.listener_port, function(){
-    console.log("Сервер ожидает подключения...");
+    console.log("server awaiting...");
 });
