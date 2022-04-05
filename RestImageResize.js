@@ -21,7 +21,7 @@ app.get("/img/get/:id/:size", function(req, res){
 				binds = {};
 
 				options = {
-						outFormat: oracledb.OUT_FORMAT_OBJECT,
+					outFormat: oracledb.OUT_FORMAT_OBJECT,
 				};
 			
 				result = await connection.execute(config.SQL_QUERY + req.params.id, binds, options);
