@@ -5,3 +5,4 @@ node_modules
 dbconfig_.js
 config_.json
 package-lock.json
+RestImageResize_.js
