@@ -3,6 +3,7 @@ const webServerConfig = require('../config/web-server-config.js');
 const morgan = require('morgan');
 const database = require('./database.js');
 const sharp = require('sharp');
+const query = require('../DBquery/query_.js');
 let server;
 
 function initialize() {
@@ -12,16 +13,16 @@ function initialize() {
     app.use(morgan('combined'));
 	app.get("/img/get/:id/:size", async (req, res) => {
 		try {
-			result = await database.Execute('SELECT FILE_NAME, BDATA FROM APEX_APP.AUDIT_STANDART_WORK_PHOTO WHERE ID = ' + req.params.id);
+			result = await database.Execute( query.SQL_QUERY + req.params.id);
  
-			const { data, info } = await sharp(result.rows[0].BDATA)
+			const { data, info } = await sharp(result.rows[0][query.BLOB_COLUMN])
 						.resize(parseInt(req.params.size))
 						.toBuffer({ resolveWithObject: true });
 
 			res.end(data);
 		}
 		catch (err){
-			res.status(500).send("Error");
+			res.status(500).send(err.toString());
 		}
     });
  
