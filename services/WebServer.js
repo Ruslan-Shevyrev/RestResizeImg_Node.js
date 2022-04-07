@@ -15,7 +15,7 @@ function initialize() {
 		try {
 			result = await database.Execute( query.SQL_QUERY + req.params.id);
  
-			const { data, info } = await sharp(result.rows[0][query.BLOB_COLUMN])
+			const { data, info } = await sharp(result.rows[0][0])
 						.resize(parseInt(req.params.size))
 						.toBuffer({ resolveWithObject: true });
 
