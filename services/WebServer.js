@@ -11,15 +11,35 @@ function initialize() {
     const app = express();
 	
     app.use(morgan('combined'));
-	app.get("/img/get/:id/:size", async (req, res) => {
+	app.get("/img/get/:id?/:width?/:height?", async (req, res) => {
 		try {
-			result = await database.Execute( query.SQL_QUERY + req.params.id);
- 
-			const { data, info } = await sharp(result.rows[0][0])
-						.resize(parseInt(req.params.size))
-						.toBuffer({ resolveWithObject: true });
+			if (req.params.id!=undefined){
+					result = await database.Execute( query.SQL_GET_IMAGE + req.params.id);
+					
+		 			if (req.params.width!=undefined){
+						if (req.params.height!=undefined){
+							const { data, info } = await sharp(result.rows[0][0])
+										.resize(parseInt(req.params.width),parseInt(req.params.height),{
+																							fit: sharp.fit.centre /*fill outside inside centre cover*/
+																						  })
+										.toBuffer({ resolveWithObject: true });
+								res.end(data);							
+						} else {
+							const { data, info } = await sharp(result.rows[0][0])
+										.resize(parseInt(req.params.width))
+										.toBuffer({ resolveWithObject: true });
+							res.end(data);
+						}
+					} else {
+						const { data, info } = await sharp(result.rows[0][0])
+									.toBuffer({ resolveWithObject: true });
+						res.end(data);
+					}
 
-			res.end(data);
+			} else {
+				res.status(500).send('Не указан идентификатор');
+			}
+				
 		}
 		catch (err){
 			res.status(500).send(err.toString());
