@@ -1,12 +1,12 @@
 const express = require('express');
-const webServerConfig = require('../config/web-server-config.js');
+//const webServerConfig = require('../config/web-server-config.js');
 const morgan = require('morgan');
 const database = require('./database.js');
 const sharp = require('sharp');
-const query = require('../DBquery/query_.js');
+//const query = require('../DBquery/query_.js');
 let server;
 
-function initialize() {
+function initialize(webServerConfig, query) {
   return new Promise((resolve, reject) => {
     const app = express();
 	

@@ -1,8 +1,8 @@
 const oracledb = require('oracledb');
-const dbConfig = require('../config/dbconfig_.js');
+//const dbConfig = require('../config/dbconfig_.js');
 const defaultThreadPoolSize = 4;
  
-async function initialize() {
+async function initialize(dbConfig) {
   console.log("creating connection pool")
   process.env.UV_THREADPOOL_SIZE = dbConfig.hrPool.poolMax + defaultThreadPoolSize; // set connection pool size
   const pool = await oracledb.createPool(dbConfig.hrPool);
