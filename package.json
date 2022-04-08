@@ -1,14 +1,14 @@
 {
-  "name": "restresizeimg-nodejs",
+  "name": "restresizeimg",
   "version": "1.0.0",
   "dependencies": {
     "express": "^4.16.4",
     "oracledb": "^5.3.0",
     "sharp": "^0.29.3",
-	"morgan": "^1.10.0"
+    "morgan": "^1.10.0"
   },
   "description": "Rest API resize image from Oracle database",
-  "main": "RestImageResize.js",
+  "main": "RestResizeImg.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +22,11 @@
     "url": "https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/issues"
   },
   "homepage": "https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs#readme",
-  "devDependencies": {}
+  "devDependencies": {},
+  "keywords": [
+    "image",
+	"oracle",
+	"rest",
+	"resize"
+  ]
 }
