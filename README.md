@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/media/logo.gif" title="logo">
+  <img src="/media/logo.gif" width="350" title="logo">
 </p>
 # RestResizeImg
 
