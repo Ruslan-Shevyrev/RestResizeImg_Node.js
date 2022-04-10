@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/media/RestResizeImage.gif" width="350" title="logo">
+  <img src="/media/RestResizeImage.gif" width="350" title="RestResizeImage">
 </p>
 
 # RestResizeImg
@@ -48,4 +48,5 @@ http://localhost:3000/img/get/30/300
 
 <p align="left">
   <img src="/media/logo.gif" width="350" title="logo">
+  <img src="/media/logoRS_FULL.png" width="350" title="RuslanShevyrev">
 </p>
