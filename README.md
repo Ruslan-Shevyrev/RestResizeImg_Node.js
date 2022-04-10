@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="/media/logo.gif" width="350" title="hover text">
+</p>
 # RestResizeImg
 
 Rest API resize image from Oracle database
