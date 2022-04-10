@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="/media/logo.gif" width="350" title="logo">
+  <img src="/media/RestResizeImage.gif" width="350" title="logo">
 </p>
+
 # RestResizeImg
 
 Rest API resize image from Oracle database
@@ -44,3 +45,7 @@ use REST API to get resize image
 ```
 http://localhost:3000/img/get/30/300 
 ```
+
+<p align="left">
+  <img src="/media/logo.gif" width="350" title="logo">
+</p>

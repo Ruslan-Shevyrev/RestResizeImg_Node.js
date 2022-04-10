@@ -2,6 +2,7 @@
 ############
 *.bak
 node_modules
+media_
 dbconfig_.js
 config_.json
 package-lock.json
