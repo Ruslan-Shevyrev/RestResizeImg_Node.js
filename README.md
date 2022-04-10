@@ -54,7 +54,7 @@ use REST API to get resize image
 http://localhost:3000/img/get/30/300 
 ```
 
-<p align="left" style="display: flex; justefy-content:space-between">
-  <img src="/media/logo.gif" width="350" title="logo">
-  <img src="/media/logoRS_FULL.png" width="350" title="RuslanShevyrev" >
+<p align="left">
+  <img src="/media/logo.gif" width="49%" title="logo">
+  <img src="/media/logoRS_FULL.png" width="49%" title="RuslanShevyrev" >
 </p>
