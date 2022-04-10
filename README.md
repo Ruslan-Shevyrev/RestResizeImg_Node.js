@@ -46,7 +46,7 @@ use REST API to get resize image
 http://localhost:3000/img/get/30/300 
 ```
 
-<p align="left">
+<p align="left" style="display: flex; justefy-content:space-between">
   <img src="/media/logo.gif" width="350" title="logo">
-  <img src="/media/logoRS_FULL.png" width="350" title="RuslanShevyrev">
+  <img src="/media/logoRS_FULL.png" width="350" title="RuslanShevyrev" >
 </p>
