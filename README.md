@@ -8,10 +8,18 @@ Rest API resize image from Oracle database
 
 ## install
 
+### variant 1
 ```
-npm install
+npm install restresizeimg
 ```
 
+### variant 2
+
+```
+1. https://codeload.github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/zip/refs/heads/master
+2. npm install
+```
+ 
 ## CONFIG
 
 ### config.json
