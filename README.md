@@ -28,6 +28,7 @@ npm install restresizeimg
 If you are install like npm package ***(option 1)***, then:
 
 ```
+const restresizeimg = require('restresizeimg');
 webServerConfig = {
   port: process.env.HTTP_PORT || /*listener_port*/ 3000
 }
@@ -47,7 +48,7 @@ query = {
   SQL_GET_IMAGE     : "SQL_QUERY_RETURN_BLOB"
 };
 
-RestResizeImage.startup(webServerConfig, dbConfig, query);
+restresizeimg.startup(webServerConfig, dbConfig, query);
 ```
 
 ### Option 2

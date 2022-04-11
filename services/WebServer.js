@@ -13,7 +13,15 @@ function initialize(webServerConfig, query) {
 	  app.get("/img/get/:id?", async (req, res) => {
 		try {
 			if (req.params.id!=undefined){
-					result = await database.Execute( query.SQL_GET_IMAGE + req.params.id);
+					binds = {id : req.params.id}
+					
+					let QUERY = query.DEFAULT_SQL_GET_IMAGE;
+					
+					if (req.query.query != undefined){
+						QUERY = query[req.query.query];
+					}
+					
+					result = await database.Execute(QUERY, binds);
 					
 					sharp_param = {
 						fit: 	sharp.fit.cover

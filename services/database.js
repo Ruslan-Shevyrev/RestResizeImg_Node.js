@@ -16,12 +16,11 @@ async function close() {
  
 module.exports.close = close;
 
-function Execute(statement, binds = [], opts = {}) {
+function Execute(statement, binds, opts = {}) {
 	return new Promise(async (resolve, reject) => {
     let conn;
  
     opts.outFormat = oracledb.OUT_FORMAT_ARRAY;
-    //opts.autoCommit = true;
  
 	 try {
 		oracledb.fetchAsBuffer = [ oracledb.BLOB ];
