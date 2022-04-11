@@ -45,7 +45,7 @@ dbConfig = {
 };
 
 query = {
-  SQL_GET_IMAGE     : "SQL_QUERY_RETURN_BLOB"
+  DEFAULT_SQL_GET_IMAGE     : "SQL_QUERY_RETURN_BLOB"
 };
 
 restresizeimg.startup(webServerConfig, dbConfig, query);
@@ -84,11 +84,11 @@ node RestResizeImgStart.js
 
 ### query (query.js)
 
-**SQL_GET_IMAGE :** sql query from database with blob image using primary key like indificator
+**DEFAULT_SQL_GET_IMAGE :** sql query from database with blob image using {:id} like indificator
 
 ***Example query:***
 ```
-SELECT blob FROM image_table WHERE ID = 
+SELECT blob FROM image_table WHERE ID = :id
 ```
 
 ##using
