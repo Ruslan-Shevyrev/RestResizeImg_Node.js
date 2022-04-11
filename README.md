@@ -4,17 +4,18 @@
 
 # RestResizeImg
 
-Rest API resize image from Oracle database
-
+Rest API resize image from Oracle database.\
+You can use this when you need a service to reduce the size of images from an ORACLE database. For example, to save traffic and you don't want to modify the original image in the database.
 ## install
 
 ### Option 1
+Install like npm package.
 ```
 npm install restresizeimg
 ```
 
 ### Option 2
-
+Install like service.
 ```
 1. https://codeload.github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/zip/refs/heads/master
 2. npm install
@@ -24,11 +25,11 @@ npm install restresizeimg
 
 ### Option 1
 
-If you chose 1 option for installation, then:
+If you are install like npm package (***option 1***), then:
 
 ```
 webServerConfig = {
-  port: process.env.HTTP_PORT || 3000
+  port: process.env.HTTP_PORT || /*listener_port*/ 3000
 }
 
 dbConfig = {
@@ -51,7 +52,7 @@ RestResizeImage.startup(webServerConfig, dbConfig, query);
 
 ### Option 2
 
-If you chose 2 option for installation, then:
+If you are install like service (***option 2***), then:
 
 1. Change configuration in files:
 ```
@@ -67,36 +68,25 @@ node RestResizeImgStart.js
 
 ## CONFIG
 
-### config.json
+### webServerConfig (webServerConfig.js)
 
-**listener_port :** port\
-**SQL_QUERY :** query from database with blob image using primary key like indificator\
-**BLOB_COLUMN :** blob image column name
+**listener_port :** port ***(default 3000)***
+
+### dbConfig (dbconfig.js)
+
+**user          :** database user,\
+**password      :** database password,\
+**connectString :** database connection string\
+**poolMin		:** Min connection pool ***(default 10)***\
+**poolMin		:** Max connection pool ***(default 10)***\
+**poolIncrement	:** Pool Increment ***(default 0)***
+
+### query (query.js)
+**SQL_GET_IMAGE : ** sql query from database with blob image using primary key like indificator\
 
 ***Example query:***
 ```
 SELECT blob FROM image_table WHERE ID = 
-```
-
-### dbconfig.js
-
-**user          :** database user,\
-**password      :** database password,\
-**connectString :** database connection string
-
-## using
-
-run service
-```
-node RestImageResize.js
-```
-use REST API to get resize image
-```
-<host>:<listener_port>/img/get/<image id from database>/<image size>
-```
-***Example:***
-```
-http://localhost:3000/img/get/30/300 
 ```
 
 options.fit String  how the image should be resized to fit both provided dimensions, one of cover, contain, fill, inside or outside. (optional, default 'cover')
