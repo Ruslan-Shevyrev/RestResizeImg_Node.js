@@ -19,7 +19,37 @@ npm install restresizeimg
 1. https://codeload.github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/zip/refs/heads/master
 2. npm install
 ```
- 
+
+## START
+
+### variant 1
+```
+webServerConfig = {
+  port: process.env.HTTP_PORT || 3000
+}
+
+webServerConfig = {
+  port: process.env.HTTP_PORT || 3000
+}
+
+dbConfig = {
+	hrPool: {
+		user          : "DB_USER",
+		password      : "DB_PASSWORD",
+		connectString : "DB_LINK",
+		poolMin: 10,
+		poolMax: 10,
+		poolIncrement: 0
+	  }
+};
+
+query = {
+  SQL_GET_IMAGE     : "SQL_QUERY_RETURN_BLOB"
+};
+
+RestResizeImage.startup(webServerConfig, dbConfig, query);
+```
+
 ## CONFIG
 
 ### config.json
