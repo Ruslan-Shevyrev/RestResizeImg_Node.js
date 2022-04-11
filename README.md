@@ -66,7 +66,7 @@ DBquery\query.js
 node RestResizeImgStart.js
 ```
 
-## CONFIG
+## config
 
 ### webServerConfig (webServerConfig.js)
 
@@ -76,9 +76,9 @@ node RestResizeImgStart.js
 
 **user          :** database user,\
 **password      :** database password,\
-**connectString :** database connection string\
-**poolMin		:** Min connection pool ***(default 10)***\
-**poolMin		:** Max connection pool ***(default 10)***\
+**connectString :** database connection string <server>:<port>/<DB>,\
+**poolMin		:** Min connection pool ***(default 10)***,\
+**poolMin		:** Max connection pool ***(default 10)***,\
 **poolIncrement	:** Pool Increment ***(default 0)***
 
 ### query (query.js)
@@ -89,6 +89,14 @@ node RestResizeImgStart.js
 ```
 SELECT blob FROM image_table WHERE ID = 
 ```
+
+##using
+
+```
+<host>:<listener_port>/img/get/<image id from database>/?parameters
+```
+parameters:
+
 
 options.fit String  how the image should be resized to fit both provided dimensions, one of cover, contain, fill, inside or outside. (optional, default 'cover')
 
