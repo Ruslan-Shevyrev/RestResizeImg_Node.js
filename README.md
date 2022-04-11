@@ -77,7 +77,10 @@ node RestResizeImgStart.js
 
 **user          :** database user,\
 **password      :** database password,\
-**connectString :** database connection string <server>:<port>/<DB>,\
+**connectString :** database connection string 
+```
+<server>:<port>/<DB>
+```
 **poolMin		:** Min connection pool ***(default 10)***,\
 **poolMin		:** Max connection pool ***(default 10)***,\
 **poolIncrement	:** Pool Increment ***(default 0)***
@@ -91,7 +94,7 @@ node RestResizeImgStart.js
 SELECT blob FROM image_table WHERE ID = :id
 ```
 
-##using
+## using
 
 ```
 <host>:<listener_port>/img/get/<image id from database>/?parameters
