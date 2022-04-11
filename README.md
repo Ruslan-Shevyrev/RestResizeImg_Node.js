@@ -8,14 +8,14 @@ Rest API resize image from Oracle database.\
 You can use this when you need a service to reduce the size of images from an ORACLE database. For example, to save traffic and you don't want to modify the original image in the database.
 ## install
 
-### Option 1
-Install like npm package.
+### Install like npm package (option 1)
+
 ```
 npm install restresizeimg
 ```
 
-### Option 2
-Install like service.
+### Install like service (Option 2)
+
 ```
 1. https://codeload.github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/zip/refs/heads/master
 2. npm install
@@ -25,7 +25,7 @@ Install like service.
 
 ### Option 1
 
-If you are install like npm package (***option 1***), then:
+If you are install like npm package ***(option 1)***, then:
 
 ```
 webServerConfig = {
@@ -52,7 +52,7 @@ RestResizeImage.startup(webServerConfig, dbConfig, query);
 
 ### Option 2
 
-If you are install like service (***option 2***), then:
+If you are install like service ***(option 2)***, then:
 
 1. Change configuration in files:
 ```
@@ -82,7 +82,8 @@ node RestResizeImgStart.js
 **poolIncrement	:** Pool Increment ***(default 0)***
 
 ### query (query.js)
-**SQL_GET_IMAGE : ** sql query from database with blob image using primary key like indificator\
+
+**SQL_GET_IMAGE : ** sql query from database with blob image using primary key like indificator
 
 ***Example query:***
 ```
