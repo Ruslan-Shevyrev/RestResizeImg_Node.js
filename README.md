@@ -8,21 +8,21 @@ Rest API resize image from Oracle database
 
 ## install
 
-### option 1
+### Option 1
 ```
 npm install restresizeimg
 ```
 
-### option 2
+### Option 2
 
 ```
 1. https://codeload.github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/zip/refs/heads/master
 2. npm install
 ```
 
-## START
+## start
 
-### option 1
+### Option 1
 
 If you chose 1 option for installation, then:
 
@@ -49,7 +49,7 @@ query = {
 RestResizeImage.startup(webServerConfig, dbConfig, query);
 ```
 
-### option 2
+### Option 2
 
 If you chose 2 option for installation, then:
 
@@ -98,6 +98,8 @@ use REST API to get resize image
 ```
 http://localhost:3000/img/get/30/300 
 ```
+
+options.fit String  how the image should be resized to fit both provided dimensions, one of cover, contain, fill, inside or outside. (optional, default 'cover')
 
 <p align="left">
   <img src="https://github.com/Ruslan-Shevyrev/Ruslan-Shevyrev/blob/main/logoRS/logo_mini.gif" width="49%" title="logo">

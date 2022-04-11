@@ -1,9 +1,7 @@
 const express = require('express');
-//const webServerConfig = require('../config/web-server-config.js');
 const morgan = require('morgan');
 const database = require('./database.js');
 const sharp = require('sharp');
-//const query = require('../DBquery/query_.js');
 let server;
 
 function initialize(webServerConfig, query) {
@@ -11,30 +9,46 @@ function initialize(webServerConfig, query) {
     const app = express();
 	
     app.use(morgan('combined'));
-	app.get("/img/get/:id?/:width?/:height?", async (req, res) => {
+	//app.get("/img/get/:id?/:width?/:height?/:fit?", async (req, res) => {
+	  app.get("/img/get/:id?", async (req, res) => {
 		try {
 			if (req.params.id!=undefined){
 					result = await database.Execute( query.SQL_GET_IMAGE + req.params.id);
 					
-		 			if (req.params.width!=undefined){
-						if (req.params.height!=undefined){
-							const { data, info } = await sharp(result.rows[0][0])
-										.resize(parseInt(req.params.width),parseInt(req.params.height),{
-																							fit: sharp.fit.centre /*fill outside inside centre cover*/
-																						  })
-										.toBuffer({ resolveWithObject: true });
-								res.end(data);							
-						} else {
-							const { data, info } = await sharp(result.rows[0][0])
-										.resize(parseInt(req.params.width))
-										.toBuffer({ resolveWithObject: true });
-							res.end(data);
-						}
-					} else {
-						const { data, info } = await sharp(result.rows[0][0])
-									.toBuffer({ resolveWithObject: true });
-						res.end(data);
+					sharp_param = {
+						fit: 	sharp.fit.cover
+					};
+					if (req.query.width != undefined){
+						sharp_param.width = parseInt(req.query.width);
 					}
+					
+					if (req.query.height != undefined){
+						sharp_param.height = parseInt(req.query.height);
+					}
+					
+					if (req.query.fit!= undefined) {
+					switch (req.query.fit) {
+						  case "fill":
+							sharp_param.fit = sharp.fit.fill
+							break;
+						  case "outside":
+							sharp_param.fit = sharp.fit.outside
+							break;
+						  case "inside":
+							sharp_param.fit = sharp.fit.inside
+							break;
+						  case "contain":
+							sharp_param.fit = sharp.fit.contain
+							break;
+						  default:
+							break;
+						}
+					}
+					
+					const { data, info } = await sharp(result.rows[0][0])
+								.resize(sharp_param)
+								.toBuffer({ resolveWithObject: true });
+					res.end(data);							
 
 			} else {
 				res.status(500).send('Не указан идентификатор');
