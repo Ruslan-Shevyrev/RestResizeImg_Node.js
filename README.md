@@ -8,12 +8,12 @@ Rest API resize image from Oracle database
 
 ## install
 
-### variant 1
+### option 1
 ```
 npm install restresizeimg
 ```
 
-### variant 2
+### option 2
 
 ```
 1. https://codeload.github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/zip/refs/heads/master
@@ -22,12 +22,11 @@ npm install restresizeimg
 
 ## START
 
-### variant 1
-```
-webServerConfig = {
-  port: process.env.HTTP_PORT || 3000
-}
+### option 1
 
+If you chose 1 option for installation, then:
+
+```
 webServerConfig = {
   port: process.env.HTTP_PORT || 3000
 }
@@ -48,6 +47,22 @@ query = {
 };
 
 RestResizeImage.startup(webServerConfig, dbConfig, query);
+```
+
+### option 2
+
+If you chose 2 option for installation, then:
+
+1. Change configuration in files:
+```
+config\dbconfig.js
+config\web-server-config.js
+DBquery\query.js
+```
+
+2. Run service
+```
+node RestResizeImgStart.js
 ```
 
 ## CONFIG
