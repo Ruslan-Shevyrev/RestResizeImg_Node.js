@@ -13,7 +13,9 @@ You can use this when you need a service to reduce the size of images from an OR
 ```
 npm install restresizeimg
 ```
-
+<p align="center">
+  <img src="/media/npm_install.gif" width="350" title="npm_install">
+</p>
 ### Install like service (Option 2)
 
 ```
