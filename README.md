@@ -16,12 +16,16 @@ npm install restresizeimg
 <p align="center">
   <img src="/media/npm_install.gif" width="350" title="npm_install">
 </p>
+
 ### Install like service (Option 2)
 
 ```
 1. https://codeload.github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/zip/refs/heads/master
 2. npm install
 ```
+<p align="center">
+  <img src="/media/service_install.gif" width="350" title="service_install">
+</p>
 
 ## start
 
