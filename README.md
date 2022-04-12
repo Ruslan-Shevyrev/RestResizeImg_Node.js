@@ -109,8 +109,8 @@ parameters:
 
 ***width :*** width of image (default: source width)\
 ***height :*** height of image (default: source height)\
-***fit :*** how the image should be resized (cover, fill, outside, inside, contain) (default: cover)
-***query :*** set query for blob. You can set more than one predetermined query (you need one query with name **DEFAULT_SQL_GET_IMAGE**)
+***fit :*** how the image should be resized (cover, fill, outside, inside, contain) (default: cover)\
+***query :*** set query for blob. You can set more than one predetermined query (you need one query named **DEFAULT_SQL_GET_IMAGE** by default)
 ```
 query = {
   DEFAULT_SQL_GET_IMAGE     : "SQL_QUERY_RETURN_BLOB",
@@ -118,6 +118,9 @@ query = {
   THIRD_SQL					: "THIRD_SQL"
 };
 ```
+<p align="center">
+  <img src="/media/example.gif" width="350" title="example">
+</p>
 
 <p align="left">
   <img src="https://github.com/Ruslan-Shevyrev/Ruslan-Shevyrev/blob/main/logoRS/logo_mini.gif" width="49%" title="logo">
