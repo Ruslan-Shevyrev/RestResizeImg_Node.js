@@ -31,7 +31,7 @@ npm install restresizeimg
 
 ### Option 1
 
-If you are install like npm package ***(option 1)***, then:
+If you installed it like npm package ***(option 1)***, then:
 
 ```
 const restresizeimg = require('restresizeimg');
@@ -59,7 +59,7 @@ restresizeimg.startup(webServerConfig, dbConfig, query);
 
 ### Option 2
 
-If you are install like service ***(option 2)***, then:
+If you installed it like service ***(option 2)***, then:
 
 1. Change configuration in files:
 ```
@@ -107,8 +107,17 @@ SELECT blob FROM image_table WHERE ID = :id
 ```
 parameters:
 
-
-options.fit String  how the image should be resized to fit both provided dimensions, one of cover, contain, fill, inside or outside. (optional, default 'cover')
+***width :*** width of image (default: source width)\
+***height :*** height of image (default: source height)\
+***fit :*** how the image should be resized (cover, fill, outside, inside, contain) (default: cover)
+***query :*** set query for blob. You can set more than one predetermined query (you need one query with name **DEFAULT_SQL_GET_IMAGE**)
+```
+query = {
+  DEFAULT_SQL_GET_IMAGE     : "SQL_QUERY_RETURN_BLOB",
+  SECOND_SQL				: "SECOND_SQL",
+  THIRD_SQL					: "THIRD_SQL"
+};
+```
 
 <p align="left">
   <img src="https://github.com/Ruslan-Shevyrev/Ruslan-Shevyrev/blob/main/logoRS/logo_mini.gif" width="49%" title="logo">
