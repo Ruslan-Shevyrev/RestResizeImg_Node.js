@@ -119,7 +119,7 @@ query = {
 };
 ```
 <p align="center">
-  <img src="/media/example.gif" width="350" title="example">
+  <img src="/media/example.gif" width="700" title="example">
 </p>
 
 <p align="left">
