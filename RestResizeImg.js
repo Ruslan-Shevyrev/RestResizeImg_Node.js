@@ -1,34 +1,5 @@
 const webServer = require('./services/WebServer.js');
-//const webServerConfig = require('./config/web-server-config.js');
-//const dbConfig = require('./config/dbconfig.js');
 const database = require('./services/database.js');
-/*webServerConfig_ = {
-  port: process.env.HTTP_PORT || 3000
-};
-*/
-/*async function startup() {
-  console.log('starting service');
-  
-	try {
-		console.log('starting database');
- 
-		await database.initialize(); 
-	} catch (err) {
-		console.error(err);
- 
-		process.exit(1);
-	}
-  
-  try {
-    console.log('starting server');
- 
-    await webServer.initialize(webServerConfig);
-  } catch (err) {
-    console.error(err);
- 
-    process.exit(1);
-  }
-}*/
 
 async function startup(webServerConfig, dbConfig, query) {
   console.log('starting service');

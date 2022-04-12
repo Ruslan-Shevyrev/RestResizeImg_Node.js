@@ -9,7 +9,6 @@ function initialize(webServerConfig, query) {
     const app = express();
 	
     app.use(morgan('combined'));
-	//app.get("/img/get/:id?/:width?/:height?/:fit?", async (req, res) => {
 	  app.get("/img/get/:id?", async (req, res) => {
 		try {
 			if (req.params.id!=undefined){

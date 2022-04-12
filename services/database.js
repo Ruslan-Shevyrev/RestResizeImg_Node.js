@@ -1,10 +1,9 @@
 const oracledb = require('oracledb');
-//const dbConfig = require('../config/dbconfig_.js');
 const defaultThreadPoolSize = 4;
  
 async function initialize(dbConfig) {
   console.log("creating connection pool")
-  process.env.UV_THREADPOOL_SIZE = dbConfig.hrPool.poolMax + defaultThreadPoolSize; // set connection pool size
+  process.env.UV_THREADPOOL_SIZE = dbConfig.hrPool.poolMax + defaultThreadPoolSize;
   const pool = await oracledb.createPool(dbConfig.hrPool);
 }
  
@@ -38,7 +37,7 @@ function Execute(statement, binds, opts = {}) {
     } catch (err) {
       reject(err);
     } finally {
-      if (conn) { // conn assignment worked, need to close
+      if (conn) {
         try {
           await conn.close();
         } catch (err) {
