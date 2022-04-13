@@ -1,6 +1,6 @@
 {
   "name": "restresizeimg",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "dependencies": {
     "express": "^4.16.4",
     "oracledb": "^5.3.0",
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs.git"
   },
   "author": "Ruslan Shevyrev",
-  "license": "ISC",
+  "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/Ruslan-Shevyrev/RestResizeImg-nodejs/issues"
   },
