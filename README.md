@@ -63,9 +63,9 @@ If you installed it like service ***(option 2)***, then:
 
 1. Change configuration in files:
 ```
-config\dbconfig.js
-config\web-server-config.js
-DBquery\query.js
+./config/dbconfig.js
+./config/web-server-config.js
+./DBquery/query.js
 ```
 
 2. Run service
