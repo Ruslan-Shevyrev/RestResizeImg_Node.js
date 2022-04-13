@@ -1,3 +1,3 @@
 module.exports = {
-  SQL_GET_IMAGE     : "SQL_QUERY"
+  DEFAULT_SQL_GET_IMAGE    : "SQL_QUERY"
 };
