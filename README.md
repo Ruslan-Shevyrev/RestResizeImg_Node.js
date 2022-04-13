@@ -113,9 +113,9 @@ parameters:
 ***query :*** set query for blob. You can set more than one predetermined query (you need one query named **DEFAULT_SQL_GET_IMAGE** by default)
 ```
 query = {
-  DEFAULT_SQL_GET_IMAGE     : "SQL_QUERY_RETURN_BLOB",
-  SECOND_SQL				: "SECOND_SQL",
-  THIRD_SQL					: "THIRD_SQL"
+  DEFAULT_SQL_GET_IMAGE : "SQL_QUERY_RETURN_BLOB",
+  SECOND_SQL : "SECOND_SQL",
+  THIRD_SQL : "THIRD_SQL"
 };
 ```
 <p align="center">
