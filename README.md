@@ -93,7 +93,7 @@ node RestResizeImgStart.js
 
 ### query (query.js)
 
-**DEFAULT_SQL_GET_IMAGE :** sql query from database with blob image using {:id} like indificator
+**DEFAULT_SQL_GET_IMAGE :** sql query from database with blob image using {:id} as indificator
 
 ***Example query:***
 ```
