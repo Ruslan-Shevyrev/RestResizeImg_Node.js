@@ -100,7 +100,7 @@ node RestResizeImgStart.js
 SELECT blob FROM image_table WHERE ID = :id
 ```
 
-## Using
+## How to use
 
 ```
 <host>:<listener_port>/img/get/<image id from database>/?parameters
